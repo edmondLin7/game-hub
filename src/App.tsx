@@ -15,10 +15,11 @@ function App() {
     </GridItem>
     </Show>
     <GridItem area='main' bg='dodgerblue'>
-      Main
+      <GameGrid />
     </GridItem>
   </Grid>
 )}
 import NavBar from "./components/NavBar"
+import GameGrid from "./components/GameGrid"
 
 export default App
