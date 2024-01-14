@@ -10,16 +10,17 @@ function App() {
       <NavBar/>
     </GridItem>
     <Show above="lg">
-    <GridItem area='aside' bg='gold'>
-      Aside
+    <GridItem area='aside' bg='navyblue'>
+      <GenreList />
     </GridItem>
     </Show>
-    <GridItem area='main' bg='dodgerblue'>
+    <GridItem area='main' bg='navyblue'>
       <GameGrid />
     </GridItem>
   </Grid>
 )}
 import NavBar from "./components/NavBar"
 import GameGrid from "./components/GameGrid"
+import GenreList from "./components/GenreList"
 
 export default App
