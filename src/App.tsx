@@ -34,13 +34,16 @@ function App() {
     </GridItem>
     </Show>
     <GridItem area='main' bg='navyblue'>
-      <Flex paddingLeft={2} marginBottom={5}>
-        <Box marginRight={5}>
-          <PlatformSelector selectedPlatform={gameQuery.platform} onSelectPlatform={(platform) => setGameQuery({ ...gameQuery, platform})}/>
-        </Box>
-        <SortSelector sortOrder={gameQuery.sortOrder} onSelectSortOrder={(sortOrder)=> setGameQuery({
-          ...gameQuery, sortOrder })}/>
-      </Flex>
+      <GameHeading gameQuery={gameQuery} />
+      <Box paddingLeft={2}>
+        <Flex marginBottom={5}>
+          <Box marginRight={5}>
+            <PlatformSelector selectedPlatform={gameQuery.platform} onSelectPlatform={(platform) => setGameQuery({ ...gameQuery, platform})}/>
+          </Box>
+          <SortSelector sortOrder={gameQuery.sortOrder} onSelectSortOrder={(sortOrder)=> setGameQuery({
+            ...gameQuery, sortOrder })}/>
+        </Flex>
+      </Box>
       <GameGrid gameQuery={gameQuery} />
     </GridItem>
   </Grid>
@@ -54,5 +57,6 @@ import PlatformSelector from "./components/PlatformSelector";
 import { Platform } from "./hooks/useGames";
 import SortSelector from "./components/SortSelector";
 import SearchInput from "./components/SearchInput";
+import GameHeading from "./components/GameHeading";
 
 export default App
