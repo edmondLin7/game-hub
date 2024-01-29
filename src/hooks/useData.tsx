@@ -1,9 +1,11 @@
+/*
 import { useEffect, useState } from "react";
-import apiClient from "../services/api-client";
 import { AxiosRequestConfig, CanceledError } from "axios";
+import { axiosInstance } from "../services/api-client";
 
 export interface FetchResponse<T> {
   count: number;
+  next: string | null
   results: T[];
 }
 
@@ -16,7 +18,7 @@ function useData<T>(endpoint: string, requestConfig?: AxiosRequestConfig, deps?:
     const controller = new AbortController();
     setLoading(true);
 
-    apiClient.get<FetchResponse<T>>(endpoint, { signal: controller.signal, ...requestConfig })
+    axiosInstance.get<FetchResponse<T>>(endpoint, { signal: controller.signal, ...requestConfig })
       .then((res) => {
         setData(res.data.results);
         setLoading(false);
@@ -34,3 +36,4 @@ function useData<T>(endpoint: string, requestConfig?: AxiosRequestConfig, deps?:
 }
 
 export default useData;
+*/
