@@ -13,9 +13,9 @@ export interface Genre {
 
 const apiClient = new APIClient<Genre>('/genres');
 
-const useGenre = () => useQuery({
+const useGenre = () => useQuery<FetchResponse<Genre>, unknown, FetchResponse<Genre>>({
     queryKey: ['genres'],
-    queryFn: apiClient.getAll,
+    queryFn: () =>  apiClient.getAll,
     staleTime: 24 * 60 * 60 * 1000, // 24 hrs
     initialData: { count: genres.length, results: genres}
 })
